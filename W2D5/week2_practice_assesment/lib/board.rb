@@ -40,19 +40,24 @@ class Board
     end
 
     def horizontal_winner?(token)
-        rows_matched = 0
-        (0...@stacks.length).each do |i|
-            hor_count = 0
-            @stacks.each_with_index do |ele1, row|
-                ele1.each_with_index do |ele2, col|
-                    if col == i && ele2 == token
-                        hor_count += 1
-                    end
-                    rows_matched += 1 if hor_count == @stacks.length
-                end
-            end
+        # rows_matched = 0
+        # (0...@stacks.length).each do |i|
+        #     hor_count = 0
+        #     @stacks.each_with_index do |ele1, row|
+        #         ele1.each_with_index do |ele2, col|
+        #             if col == i && ele2 == token
+        #                 hor_count += 1
+        #             end
+        #             rows_matched += 1 if hor_count == @stacks.length
+        #         end
+        #     end
+        # end
+        # rows_matched >= 1
+
+        (0...@stacks.length) each do |i|
+            return true if @stacks.all?{|stack| stack[i] == token}
         end
-        rows_matched >= 1
+        return false
     end
 
     def winner?(token)

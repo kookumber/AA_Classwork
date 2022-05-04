@@ -48,4 +48,5 @@ def longest_streak(str)
     i = 0
     arr = []
     while i < str.length
+    end
 end
