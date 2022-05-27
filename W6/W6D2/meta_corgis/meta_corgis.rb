@@ -109,8 +109,19 @@ class MetaCorgiSnacks
     @box_id = box_id
   end
 
+  def get(anything)
+
+  end
+
   def method_missing(name, *args)
     # Your code goes here...
+    method_name = name.to_s
+    if method_name.starts_with?("get_")
+        attribute_string = method_name[("get_".length)..-1]
+
+        attribute_names = attribute_string.split("_and_")
+    end
+
   end
 
 
