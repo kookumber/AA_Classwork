@@ -1,0 +1,22 @@
+<div class="centered-box">
+    <h2>Create a New Account</h2>
+
+    <form action="<%= users_url %>" method="post">
+        <input type="hidden" 
+               name="authenticity_token" 
+               value="<%= form_authenticity_token %>">
+
+        <label for="user_email">Email:</label>
+        <input type="text" name="user[email]" value="">
+
+        <br>
+
+        <label for="user_password">Password:</label>
+        <input type="password" name="user[password]" value="">
+
+        <br>
+
+        <input type="submit" value="Sign up!">
+
+    </form>
+</div>

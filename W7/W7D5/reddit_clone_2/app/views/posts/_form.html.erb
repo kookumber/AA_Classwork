@@ -1,0 +1,31 @@
+<% if type == :new %>
+    <% action_url = posts_url %>
+    <% method_name = 'post' %>
+<% else%>
+    <% action_url = post_url(post) %>
+    <% method_name = 'patch' %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type='hidden' name='_method' value='<%= method_name %>'>
+
+    <label for='title'>Title:</label>
+    <input id='title' type='text' name='post[title]' value='<%= post.title %>'>
+    <br>
+
+    <label for='url'>Url:</label>
+    <input id='url' type='text' name='post[url]' value='<%= post.url %>'>
+    <br>
+
+    <label for='content'>Content:</label>
+    <input id='content' type='textbox' name='post[content]' value='<%= post.content %>'>
+    <br>
+
+    <% Sub.all.each do |sub|%>
+        <label for='sub'><%= sub.title %></label>
+        <input id='sub' type='checkbox' name='post[sub_id]' value='<%= sub.id %>'>
+    <% end %>
+    
+    <input type="submit" value="Submit!">
+</form>

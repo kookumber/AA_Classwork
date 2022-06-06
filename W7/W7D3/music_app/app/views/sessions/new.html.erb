@@ -1,0 +1,20 @@
+<h2>Login!</h2>
+
+<div>
+    <h3>Enter your credentials below<h3>
+    <form action="/session" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+        <label for="user_email">Email:</label>
+        <input type="text" name="user[email]" id="user_email" value="">
+
+        <br>
+
+        <label for="user_password">Password:</label>
+        <input type="password" name="user[password]" id="user_password" value="">
+
+        <br>
+
+        <input type="submit" value="Sign in!">
+    </form>
+</div>

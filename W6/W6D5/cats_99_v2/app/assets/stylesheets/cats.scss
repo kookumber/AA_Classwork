@@ -1,0 +1,46 @@
+// Place all the styles related to the Cats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    display: flexbox;
+}
+table {
+    border: 1px solid #333;
+    margin: 15px;
+    width: 450px;
+}
+
+thead {
+    width: 550px;
+}
+
+td {
+    white-space: nowrap;
+    border: 1px solid black;
+    position: relative;
+    text-align: center;
+}
+
+// label {
+//     margin: 10px;
+//     margin-bottom: 15px;
+// }
+
+td#sex {
+    width: 50px;
+}
+
+td#color {
+    width: 250px;
+}
+
+td#birth_date {
+    width: 200px;
+}
+
+
+tr th#show {
+    width: 200px;
+    text-align: right;
+}

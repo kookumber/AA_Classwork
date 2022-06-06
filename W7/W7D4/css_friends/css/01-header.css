@@ -1,0 +1,46 @@
+/* PHASE 1: Header */
+
+body {
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    background: white;
+}
+
+
+.header {
+    background: red;
+    color: white;
+}
+
+.header a {
+    display: block;
+    padding: 10px 20px;
+}
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1000px;
+    border-left: 1px solid black;
+}
+
+.header-logo {
+    font-weight: 700;
+}
+
+.header-logo:hover {
+    background-color: black;
+}
+
+.header-list {
+    display: flex;
+}
+
+.header-list > li {
+}
+
+.header-list > li:hover {
+    background: black;
+
+}

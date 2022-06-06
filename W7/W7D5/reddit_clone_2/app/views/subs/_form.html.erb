@@ -1,0 +1,21 @@
+<% if type == :new %>
+    <% action_url = subs_url %>
+    <% method_name = "post"%>
+<% else %>
+    <% action_url = sub_url(sub) %>
+    <% method_name = "patch"%>
+<% end %>
+
+
+<form action="<%= action_url %>" method = "post">
+    <input type="hidden" name = "_method" value ="<%= method_name %>">
+    <input type="hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+    
+    <label for="title">title</label>
+    <input id = "title" type="text" name="sub[title]" value = "<%= sub.title %>">
+    <br>
+    <label for="description">description</label>
+    <input id = "description" type="textbox" name="sub[description]" value = "<%= sub.description %>">
+    <br>
+    <input type="submit" value="Submit">
+</form>

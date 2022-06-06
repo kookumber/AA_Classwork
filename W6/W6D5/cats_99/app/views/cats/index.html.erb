@@ -1,0 +1,14 @@
+<h1>Many meows</h1>
+<a href="<%= cats_url%>">Go to New Cat Page</a>
+<ul>
+    <% @cats.each do |cat| %>
+        <!-- <a href="<%= cat_url(cat) %>">Cats Show Page</a> -->
+        <li>
+            <%= render 'cat', cat: cat, action: :index %>
+        </li>
+    <% end %>
+</ul>
+
+
+
+

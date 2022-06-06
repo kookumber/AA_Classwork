@@ -1,0 +1,72 @@
+<%# This to change:
+    - action
+    - hidden input patch
+    - pre-filled values
+    - submit button
+ %>
+<% if action == :edit %>
+    <% action_url = cat_url(cat) %>
+<% elsif action == :new %>
+    <% action_url = cats_url %>
+<% end %>
+
+<form action="<%= action_url %>" method = "post">
+
+    <%# add this if to adjust the method depending on edit or new%>
+    <% if action == :edit %>
+        <input type="hidden" name="_method" value="PATCH">
+    <% end %>
+
+    <label for="name">Name: 
+        <input type="text" name="cat[name]" id="name" value="<%= cat.name %>">
+    </label> 
+
+    <br>
+    <br>
+
+    <label for="color">Color: 
+        <!-- <input type="text" name="cat[color]" id="color" value=""> -->
+        <select name=cat[color] id="color">
+            <option disabled selected <%= cat.color ? "" : "selected"%> >--Please Select--</option>
+            <option value="rainbow" <%= cat.color == "rainbow" ? "selected" : ""%> >rainbow</option>
+            <option value="magenta" <%= cat.color == "magenta" ? "selected" : ""%> >magenta</option>
+            <option value="sapphire" <%= cat.color == "sapphire" ? "selected" : ""%> >sapphire</option>
+            <option value="blue" <%= cat.color == "blue" ? "selected" : ""%> >blue</option>
+            <option value="azure" <%= cat.color == "azure" ? "selected" : ""%> >azure</option>
+            <option value="seafoam green" <%= cat.color == "seafoam green" ? "selected" : ""%> >seafoam green</option>
+            <option value="red" <%= cat.color == "red" ? "selected" : ""%> >red</option>
+            <option value="opal" <%= cat.color == "opal" ? "selected" : ""%> >opal</option>
+            <option value="yellow" <%= cat.color == "yellow" ? "selected" : ""%> >yellow</option>
+        </select>
+    </label> 
+
+    <br>
+    <br>
+
+    <label for="birth_date">Birth Date: 
+        <input type="date" name="cat[birth_date]" id="birth_date" value="<%= cat.birth_date %>">
+    </label> 
+
+    <br>
+    <br>
+
+    <label for="sex">Sex: 
+        <input type="radio" name="cat[sex]" id="male" value="M" <%= cat.sex == "M" ? "checked" : "" %>>
+        <label for="male">M</label>
+        <input type="radio" name="cat[sex]" id="female" value="F" <%= cat.sex == "F" ? "checked" : "" %>>
+        <label for="female">F</label>
+    </label> 
+
+    <br>
+    <br>
+
+    <label for="description">Description:
+        <textarea name="cat[description]" id="description" value="<%= cat.description %>"></textarea>
+    </label>
+
+    <br>
+    <br>
+
+    <input type="submit" value="<%= (action == :edit) ? 'Update Cat' : 'Create Cat' %>"> <%# This needs to change %>
+
+</form>

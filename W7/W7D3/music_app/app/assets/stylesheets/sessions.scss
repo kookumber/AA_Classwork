@@ -1,0 +1,21 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+div {
+    margin: auto;
+    width: 50%;
+    padding: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form {
+    display: inline-flex;
+    position: relative;
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
+}

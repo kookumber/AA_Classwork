@@ -1,0 +1,28 @@
+
+<!-- <a href="<% cat_url(cat.id) %>">Cat's Chicken Show Page</a> -->
+
+<table>
+    <thead>
+        <tr>
+            <th id="name"><%=cat.name%></th>
+            <th id="show">
+                <% if action == :show %>
+                    <a href="<%= cats_url %>">Cat Index</a>
+                <% else %>
+                    <a href="<%= cat_url(cat) %>">Cat's Page</a>
+                <% end %>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!-- <td><h3><%= cat.name %></h3></td> -->
+            <td id="color">Color: <%= cat.color %></td>
+            <td id="sex">Sex: <%= cat.sex %></td>
+            <td id=birth_date">Birthday: <%= cat.birth_date %></td>
+        </tr>
+        <tr id="desc">
+            <td>Description: <br><%= cat.description %></td>
+        </tr>
+    </tbody>
+</table>
