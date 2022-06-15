@@ -1,0 +1,15 @@
+/* PHASE 2: Thumbs */
+
+.profile-friends {
+    float: left;
+    width: 55px;
+    margin: 0 0 10px 0;
+}
+.thumb {
+    display: flex;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 3px;
+}

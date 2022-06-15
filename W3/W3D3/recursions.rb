@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 def range(start, last)
     return [] if last <= start
     return [start] if start + 1 == last
@@ -125,16 +125,16 @@ end
 
 p merge_sort([1, 2, 66, 4, 10, 3, 5, 33])
 
-def subsets(arr)
-    return [arr] if arr.length == 0
-    return [[], arr] if arr.length == 1
+# def subsets(arr)
+#     return [arr] if arr.length == 0
+#     return [[], arr] if arr.length == 1
 
-    new_arr.unshift(arr)
-    new_arr.unshift(arr.pop)
+#     new_arr.unshift(arr)
+#     new_arr.unshift(arr.pop)
     
-    subsets(arr).push 
+#     subsets(arr).push 
 
-end
+# end
 
 # p subsets([])
 # p subsets([1]) #[[], [1]]
